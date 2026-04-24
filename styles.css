@@ -1,0 +1,146 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --surface: #1f2937;
+  --primary: #38bdf8;
+  --accent: #f97316;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 35%),
+    linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+header h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+.player-card,
+.theme-selection,
+#quiz-area,
+.status-panel {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.player-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.player-card input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  padding: 12px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.theme-selection .buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.theme-btn,
+.submit-btn,
+.next-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.theme-btn {
+  background: rgba(56, 189, 248, 0.16);
+  color: var(--primary);
+}
+
+.theme-btn:hover,
+.submit-btn:hover,
+.next-btn:hover {
+  transform: translateY(-1px);
+}
+
+.submit-btn,
+.next-btn {
+  background: var(--primary);
+  color: #020617;
+  margin-top: 18px;
+}
+
+.summary,
+.question-text,
+.result-text {
+  margin-top: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.question-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.answers {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.answer-option input {
+  accent-color: var(--accent);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .player-card {
+    grid-template-columns: 1fr;
+  }
+}

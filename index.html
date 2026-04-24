@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebQuest: O Motor de Conhecimento</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>WebQuest: O Motor de Conhecimento</h1>
+      <p>Escolha um tema, responda à pergunta e ganhe XP para subir de nível.</p>
+    </header>
+
+    <section class="player-card">
+      <div>
+        <label for="player-name">Nome do Jogador</label>
+        <input id="player-name" type="text" placeholder="Digite seu nome" />
+      </div>
+      <div>
+        <span id="player-level">Nível: 1 - Padawan</span>
+        <span id="player-xp">XP: 0</span>
+      </div>
+    </section>
+
+    <section class="theme-selection">
+      <h2>Temas de Estudo</h2>
+      <div class="buttons">
+        <button class="theme-btn" data-theme="python">Python</button>
+        <button class="theme-btn" data-theme="php">PHP</button>
+      </div>
+      <div id="theme-summary" class="summary"></div>
+    </section>
+
+    <section id="quiz-area" class="quiz hidden">
+      <div class="question-header">
+        <h2 id="question-title">Pergunta</h2>
+        <p id="question-theme"></p>
+      </div>
+      <div id="question-text" class="question-text"></div>
+      <form id="answer-form" class="answers"></form>
+      <button id="submit-answer" class="submit-btn" disabled>Enviar resposta</button>
+      <p id="result-text" class="result-text"></p>
+      <button id="next-question" class="next-btn hidden">Próxima pergunta</button>
+    </section>
+
+    <section class="status-panel">
+      <h2>Status</h2>
+      <p id="question-count">Pergunta 0/0</p>
+      <p id="points-legend">Respostas: +50 XP na 1ª tentativa, +20 XP na 2ª tentativa, 0 XP no erro.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
